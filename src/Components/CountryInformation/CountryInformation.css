@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+.country_Information{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 60px;
+    flex-wrap: wrap;
+}
+.countryDetails{
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: flex-start;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+   
+}
+.flagImage img{
+    width: 250px;
+    height: 150px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+.countryName{
+    padding-left: 15px;
+    padding-top: 6px;
+}
+.informationAbtPopulationRegionFlag{
+    padding-top: 6px;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+  
+}
