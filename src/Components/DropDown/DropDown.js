@@ -1,17 +1,21 @@
 import React from 'react'
 import './DropDown.css'
 
-function DropDown() {
+function DropDown(props) {
+  const getCountryListAPI = props.getCountryListAPI
   return (
     <div className='DropDown'>
        <div class="select-dropdown">
-	      <select>
+	      <select onChange={(e)=>{
+           console.log(e.target.value)
+           getCountryListAPI(`region/${e.target.value}`)
+        }}>
         <option value="Option 1">Filter by Region</option>
-		    <option value="Option 1">Africa</option>
-		    <option value="Option 2">America</option>
-		    <option value="Option 3">Asia</option>
-        <option value="Option 1">Europe</option>
-		    <option value="Option 2">Oceania</option>       
+		    <option value="Africa">Africa</option>
+		    <option value="Americas">Americas</option>
+		    <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+		    <option value="Oceania"></option>       
 	     </select>
        </div>
     </div>

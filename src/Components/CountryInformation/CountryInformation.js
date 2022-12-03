@@ -1,29 +1,17 @@
 import React from 'react'
 import './CountryInformation.css'
-import axios from 'axios';
-import { useEffect, useState } from 'react'
 
 
 
-function CountryInformation() {
 
-    const [countries, setCountries] = useState([])
+function CountryInformation(props) {
 
-    useEffect(() => {
-        getCountryListAPI();
-    }, [])
-
-
-   const getCountryListAPI = (region = "all") => {
-        axios.get(`https://restcountries.com/v2/${region}?fields=name,region,flag,capital,population`).then((response) => {
-            setCountries(response.data)
-        })
-    }
+   
 
     return (
         <div className='country_Information'>
             {
-                countries.map((country, index) => {
+                props.countries.map((country, index) => {
                     return (
 
                         <div className="countryDetails">
