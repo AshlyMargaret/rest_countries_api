@@ -21,10 +21,10 @@ function Home() {
       axios.get(`${baseUrl}${region}?fields=name,region,flag,capital,population`).then((response) => {
           setCountries(response.data)
       })
-
       
   }
   return (
+    
     <div className='home'>
         <header>
             <Header/>
@@ -39,10 +39,11 @@ function Home() {
             </div>
           </div>
           <div className="flagRegionSection">
-            <CountryInformation countries = {countries}/>
+           <CountryInformation countries = {countries}/>
           </div>
-        </main>
+        </main>     
     </div>
+  
   )
 }
 

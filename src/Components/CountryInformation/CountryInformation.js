@@ -1,27 +1,34 @@
 import React from 'react'
 import './CountryInformation.css'
-
-
+import { useNavigate, useParams } from "react-router-dom";
 
 
 function CountryInformation(props) {
 
-   
+    const navigate = useNavigate();
 
-    return (
+
+    const handleChange = (e)=>{
+        console.log(e);
+        navigate("/details");
+
+    }
+
+    return ( 
         <div className='country_Information'>
             {
                 props.countries.map((country, index) => {
                     return (
-
-                        <div className="countryDetails">
+                        <div className="countryDetails" onClick={handleChange}>
+                       
                             <div className="flagImage">
                                 <img src={country.flag} alt="" />
                             </div>
+                        
                             <div className="countryName">
                                 <h5>{country.name}</h5>
                             </div>
-                            <div className="informationAbtPopulationRegionFlag">
+                             <div className="informationAbtPopulationRegionFlag">
                                 <div className="population">
                                     <p><span>Population:</span>{country.population}</p>
                                 </div>
@@ -32,14 +39,14 @@ function CountryInformation(props) {
                                     <p><span>Capital:</span>{country.capital}</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
+                                            
                     )
                 })
             }
 
+        </div>  
 
-
-        </div>
     )
 }
 
