@@ -30,3 +30,16 @@
     background-color: #fff;
     color: #333;
    }
+
+   /* Media query */
+
+   @media screen and (max-width:375px){
+      .headerLeftSeciton h3{
+        font-size: 25px;
+      }
+   }
+   @media screen and (max-width:320px){
+    .headerLeftSeciton h3{
+      font-size: 20px;
+    }
+ }

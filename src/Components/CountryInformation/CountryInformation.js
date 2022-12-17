@@ -1,16 +1,17 @@
 import React from 'react'
 import './CountryInformation.css'
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 function CountryInformation(props) {
+  
 
     const navigate = useNavigate();
 
 
-    const handleChange = (e)=>{
-        console.log(e);
-        navigate("/details");
+    const handleChange = (country)=>{
+        console.log(country.name);
+        navigate("details", {state:{country : country}});
 
     }
 
@@ -19,7 +20,9 @@ function CountryInformation(props) {
             {
                 props.countries.map((country, index) => {
                     return (
-                        <div className="countryDetails" onClick={handleChange}>
+                        <div key={index} className="countryDetails" onClick={()=>{
+                            handleChange(country)
+                        }}>
                        
                             <div className="flagImage">
                                 <img src={country.flag} alt="" />

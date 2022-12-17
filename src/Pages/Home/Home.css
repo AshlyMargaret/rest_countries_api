@@ -13,3 +13,22 @@
 .searchBar{
     width: 30%;
 }
+.globe{
+    width: 300px;
+}
+
+
+/* Media Query */
+
+@media screen and (max-width:414px) {
+    .search_filter_country_region{
+        flex-direction: column;
+        gap: 25px;
+    }
+    .searchBar{
+        width: 100%;
+    }
+    .filterDropBox{
+        width: 60%;
+    }
+}
