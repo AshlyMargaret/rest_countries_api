@@ -11,7 +11,7 @@ function CountryInformation(props) {
 
     const handleChange = (country)=>{
         console.log(country.name);
-        navigate("details", {state:{country : country}});
+        navigate(`details/${country.name}`, {state:{country : country}});
 
     }
 

@@ -11,6 +11,7 @@ function Details() {
 
   const location = useLocation();
   console.log(location.state);
+  const countryState = location.state;
  
   return (
     <div className='details'>
@@ -24,11 +25,13 @@ function Details() {
       </div>
       <div className="countryDetailsBlock">
         <div className="countryImage">
-          <img src={location.state.country.flag} alt="" />
+          {/* <img src={location.state.country.flag} alt="" /> */}
+          <img src={countryState.country.flag} alt="" />
         </div>
         <div className="countryDetailsSecBloc">
           <div className="countryName">
-            <h3>{location.state.country.name}</h3>
+            {/* <h3>{location.state.country.name}</h3> */}
+            <h3>{countryState.country.name}</h3>
           </div>
           <div className="leftRight">
           <div className="countryOtherDetailsLeft">
